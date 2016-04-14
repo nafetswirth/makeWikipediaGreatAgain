@@ -1,7 +1,5 @@
 (function() {
 
-
-
   'use strict';
 
   angular
@@ -27,6 +25,21 @@
             articles: ['Resource', function(Resource) {
               return Resource.articles.query().$promise;
             }]
+            //   articles: ['$q', function ($q) {
+            //       var articles = [
+            //           {
+            //               'name': 'test',
+            //               'content': 'test',
+            //               'id':   1
+            //           },
+            //           {
+            //               'name': 'wuat',
+            //               'content': 'asd',
+            //               'id':   2
+            //           }
+            //       ];
+            //       return $q.when(articles);
+            //   }]
           }
         })
         .state('newArticle', {

@@ -3,7 +3,6 @@
 
     angular.module('wiki')
         .controller('ArticleDetailCtrl', [
-        	'$scope',
             'article',
             'Resource',
             ArticleDetailCtrl
@@ -11,14 +10,14 @@
 
 
 
-    function ArticleDetailCtrl($scope, article, Resource) {
+    function ArticleDetailCtrl(article, Resource) {
         var vm = this;
            
        	vm.appendToContent = appendToContent;
        	vm.allArticles = [];
         vm.article = article;
         vm.generateWikiLinkFor = generateWikiLinkFor;
-        vm.isEdit = (Object.keys(article).length === 0) ? true : false;
+        vm.isEdit = (Object.keys(article).length === 0);
         vm.noContent = noContent;
         vm.saveArticle = saveArticle;
 
@@ -34,7 +33,6 @@
         }
 
         function generateWikiLinkFor(article) {
-        	console.log('wikilinkgenerator')
         	var stringToAppend = '[' + article.name + '](#/' + article.id + ')';
         	appendToContent(stringToAppend);
         }
