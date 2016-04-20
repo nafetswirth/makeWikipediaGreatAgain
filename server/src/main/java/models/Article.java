@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by herby on 22/04/15.
+ * @author Mohammed Derouich, Stefan Wirth
  */
 public class Article
 {
@@ -44,8 +44,7 @@ public class Article
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "Article{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
