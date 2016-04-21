@@ -20,6 +20,7 @@
         vm.isEdit = (Object.keys(article).length === 0);
         vm.noContent = noContent;
         vm.saveArticle = saveArticle;
+        vm.showAlert = false;
 
         lazyLoadAllArticles();
 
@@ -49,6 +50,12 @@
         }
 
         function saveArticle(article) {
+            console.log(article);
+            if(article.name === undefined || article.name === "") {
+                vm.showAlert = true;
+                return;
+            }
+
         	Resource.articles.save({articleId: article.id, name: article.name, content: article.content}, article).$promise.then(function() {
     			vm.isEdit = !vm.isEdit;
         	}).catch(function(err){
